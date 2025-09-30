@@ -19,8 +19,15 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { MovieType } from "@/lib/movieType";
+
 
 export default function Home() {
+  const testMovies: MovieType[] = [
+    { name: "minaa", rating: 9, images: ["gjdfkj"] },
+    { name: "mina1", rating: 8, images: ["gjh2fkj"] },
+    { name: "mina2", rating: 7, images: ["gjhgfkj"] },
+  ];
   return (
     <div>
       <div className="flex justify-between">
@@ -52,25 +59,25 @@ export default function Home() {
           <img src="moon.svg" className="w-[16px] h-[16px] mt-2 mr-2" />
         </div>
       </div>
-      <div>
+      <div className="h-fit w-fit">
         <Carousel>
           <CarouselContent>
             <CarouselItem>
-              <p>fhfhfhfh</p>
+              <img src="./photos/movie1.jpg" className="h-[600px] w-[1440px]" />
             </CarouselItem>
             <CarouselItem>
-              <p>o</p>
-              <img src="film (1).svg" className="w-[20px] h-[20px]"></img>
+              <img src="./photos/movie2.png" className="h-[600px] w-[1440px]" />
             </CarouselItem>
             <CarouselItem>
-              <p>o</p>
-              <img src="film (1).svg" className="w-[20px] h-[20px]"></img>
+              <img src="./photos/movie3.jpg" className="h-[600px] w-[1440px]" />
             </CarouselItem>
           </CarouselContent>
           <CarouselPrevious />
           <CarouselNext />
         </Carousel>
       </div>
+
     </div>
+
   );
 }
