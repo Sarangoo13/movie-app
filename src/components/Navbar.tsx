@@ -42,7 +42,7 @@ export const Navbar = () => {
 
         <DropdownMenu>
           <DropdownMenuTrigger className="border-solid border-1 border-[#F4F4F5] p-[8px]">
-            Genressssskjhgfdghjkgftch jkhv
+            Genressssskjhgfdghjkgftch jkhvasdfghjggf
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             <DropdownMenuLabel>Genres</DropdownMenuLabel>
