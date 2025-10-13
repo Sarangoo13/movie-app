@@ -16,13 +16,13 @@ export default async function Home(props: { movie: MovieType[] }) {
     const response = await axiosInstance.get(`/movie/${category}`);
     return response.data;
   };
+
   const upcomingMovieData = await getMovies("upcoming");
   const popularMovieData = await getMovies("popular");
   const topRatedMovieData = await getMovies("top_rated");
 
   return (
     <div>
-      <Navbar></Navbar>
       <div>
         <Carouselpage></Carouselpage>
       </div>
@@ -38,7 +38,6 @@ export default async function Home(props: { movie: MovieType[] }) {
         text={"Top Rated"}
         movies={topRatedMovieData.results}
       ></GroupedMovies>
-      <Footer></Footer>
     </div>
   );
 }

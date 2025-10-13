@@ -43,7 +43,7 @@ export default async function Details({
                 {movieData.vote_average}
               </p>
               <p className="text-[#71717A] font-[12px]">
-                {movieData.vote_count}
+                {movieData.vote_count}k
               </p>
             </div>
           </div>
@@ -65,7 +65,10 @@ export default async function Details({
       <div className="flex gap-3 ">
         {movieData.genres.map((genre: { name: string }) => {
           return (
-            <div className="border-1px solid border-black text-[#09090B] text-[12px] font-semibold">
+            <div
+              key={Math.random()}
+              className="border-1px solid border-black text-[#09090B] text-[12px] font-semibold"
+            >
               {genre.name}
             </div>
           );
@@ -76,9 +79,7 @@ export default async function Details({
           {movieData.overview}
         </p>
       </div>
-      <div>
-        
-      </div>
+      <div></div>
     </div>
   );
 }

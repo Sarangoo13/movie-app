@@ -1,7 +1,7 @@
 import { MovieType } from "@/lib/movieType";
 import { MovieCard } from "./MovieCard";
 
-export function GroupedMovies({
+export function GroupedMovies2({
   movies,
   text,
 }: {
@@ -17,7 +17,7 @@ export function GroupedMovies({
 
       <div className="flex justify-center">
         <div className="flex flex-wrap gap-8 w-[1300px]">
-          {movies.splice(0, 10).map((movie, i) => {
+          {movies.splice(0, 5).map((movie, i) => {
             return <MovieCard isLaoding={true} key={i} movie={movie} />;
           })}
         </div>
