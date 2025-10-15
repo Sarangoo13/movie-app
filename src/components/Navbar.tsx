@@ -9,14 +9,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Input } from "@/components/ui/input";
 import { axiosInstance } from "@/lib/utils";
-import { useRouter } from "next/router";
+import { Genre } from "./Genre";
 
 export const Navbar = async () => {
-  const router = useRouter();
-
-  const handleOnclick = () => {
-    router.push(`/genre/${movie.id}`);
-  };
   const getGenres = async () => {
     const response = await axiosInstance.get(`/genre/movie/list?language=en`);
     return await response.data.genres;
@@ -44,40 +39,8 @@ export const Navbar = async () => {
         <p className="text-[16px] text-[#4338CA]">Movie Z</p>
       </div>
       <div className="flex gap-[12px]">
-        {/* <Genre></Genre>  */}
+        <Genre genres={genres}></Genre>
 
-        <DropdownMenu onClick={handleOnclick}>
-          <DropdownMenuTrigger className="border-solid border-1 border-[#F4F4F5] p-[8px]">
-            Genre
-          </DropdownMenuTrigger>
-          <DropdownMenuContent>
-            <DropdownMenuLabel>
-              <p className="text-[#09090B] text-[24px] font-semibold">Genres</p>
-              <p className="text-[#09090B] text-[16px] font-normal">
-                See lists of movies by genre
-              </p>
-            </DropdownMenuLabel>
-
-            <DropdownMenuSeparator />
-            <div
-              className="flex flex-wrap items-center min-w-[fit] w-[40vw] gap-3
-            p-5"
-            >
-              {genres.map(
-                (genre: { id: number; name: string }, index: number) => {
-                  return (
-                    <DropdownMenuItem
-                      key={index}
-                      className="border-2 rounded-[9999px]"
-                    >
-                      {genre.name + `   > `}
-                    </DropdownMenuItem>
-                  );
-                }
-              )}
-            </div>
-          </DropdownMenuContent>
-        </DropdownMenu>
         <Input></Input>
       </div>
       <div className="items-center justify-center  border-1 border-rounded border-[#F4F4F5] w-[36px] h-[36px]">
