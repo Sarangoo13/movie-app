@@ -14,8 +14,8 @@ export function Genre(props: {
 }) {
   const { genres } = props;
   const router = useRouter();
-  const handleOnclick = (id: number) => {
-    router.push(`/genre?id=${id}&page=1`);
+  const handleOnclick = (id: number, name:string) => {
+    router.push(`/genre?id=${id}&name=${name}&page=1`);
   };
   return (
     <DropdownMenu>
@@ -39,7 +39,7 @@ export function Genre(props: {
             return (
               <DropdownMenuItem
                 onClick={() => {
-                  handleOnclick(genre.id);
+                  handleOnclick(genre.id, genre.name);
                 }}
                 key={index}
                 className="border-2 rounded-[9999px]"

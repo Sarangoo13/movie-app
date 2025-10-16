@@ -29,15 +29,15 @@ export default async function Home(props: { movie: MovieType[] }) {
       <GroupedMovies
         text={"Upcoming"}
         movies={upcomingMovieData.results}
-      ></GroupedMovies>
+      />
       <GroupedMovies
         text={"Popular"}
         movies={popularMovieData.results}
-      ></GroupedMovies>
+      />
       <GroupedMovies
         text={"Top Rated"}
         movies={topRatedMovieData.results}
-      ></GroupedMovies>
+      />
     </div>
   );
 }

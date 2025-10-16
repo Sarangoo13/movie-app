@@ -26,7 +26,7 @@ export async function Info({ infoData }: { infoData: MovieInfoType }) {
   };
   const writers = await getWriters();
 
-  const getStars = () => {
+  const getStars = async () => {
     const stars = infoData.cast;
     return stars;
   };
