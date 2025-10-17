@@ -43,7 +43,7 @@ export function MovieCard({ movie, isLaoding }: Props) {
                 strokeLinejoin="round"
               />
             </svg>
-            <p>{movie.vote_average}</p>
+            <p><span>{movie.vote_average}</span>/10</p>
           </div>
           <h4 className="name text-black font-semibold">{movie.title}</h4>
         </div>

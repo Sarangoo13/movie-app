@@ -17,10 +17,12 @@ export default async function Home(props: { movie: MovieType[] }) {
     return response.data;
   };
 
+
   const upcomingMovieData = await getMovies("upcoming");
   const popularMovieData = await getMovies("popular");
   const topRatedMovieData = await getMovies("top_rated");
-
+ 
+  console.log(upcomingMovieData, "upcoming");
   return (
     <div>
       <div>
